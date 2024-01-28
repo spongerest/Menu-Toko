@@ -1,0 +1,23 @@
+{
+    "development": {
+        "username": "postgres",
+        "password": "kehidupanbaru15",
+        "database": "developmentMenuTokoDB",
+        "host": "127.0.0.1",
+        "dialect": "postgres"
+    },
+    "test": {
+        "username": "postgres",
+        "password": "kehidupanbaru15",
+        "database": "testMenuTokoDB",
+        "host": "127.0.0.1",
+        "dialect": "postgres"
+    },
+    "production": {
+        "username": "postgres",
+        "password": "kehidupanbaru15",
+        "database": "productionMenuTokoDB",
+        "host": "127.0.0.1",
+        "dialect": "postgres"
+    }
+}

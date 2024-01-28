@@ -1,0 +1,11 @@
+/backend/node_modules/
+/frontend/node_modules/
+*.env
+/backend/src/config/development.env
+/backend/src/config/production.env
+/backend/src/config/test.env
+*.log
+.DS_Store
+.vscode/
+.idea/
+/tests/
