@@ -1,4 +1,5 @@
-const { Order, Menu } = require('../models');
+const { Order } = require('../models/orderModel');
+const { Menu } = require('../models/menuModel');
 
 const createOrder = async (orderData) => {
     if (orderData.quantity <= 0) {

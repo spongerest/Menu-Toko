@@ -1,4 +1,4 @@
-const { Menu } = require('../models');
+const { Menu } = require('../models/menuModel');
 
 const addMenuItem = async (menuItemData) => {
     const menuItem = await Menu.create(menuItemData);

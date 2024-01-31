@@ -1,8 +1,8 @@
-const { User } = require('../models');
-const bcrypt = require('bcrypt');
+const { User } = require('../models/userModel');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const menuService = require('../services/menuService');
-const { getOrderById, updateOrderStatus } = require('./orderServices');
+const { getOrderById, updateOrderStatus } = require('../services/orderService');
 
 exports.adminLogin = async (req, res) => {
     try {

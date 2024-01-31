@@ -2,7 +2,14 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-    class Order extends Model {}
+    class Order extends Model {
+        static associate(models) {
+            Order.belongsTo(models.Menu, {
+                foreignKey: 'menuId',
+                as: 'menu'
+            });
+        }
+    }
 
     Order.init({
         userId: {
@@ -17,20 +24,6 @@ module.exports = (sequelize, DataTypes) => {
         sequelize,
         modelName: 'Order',
     });
-    class Order extends Model {}
-        Order.init({
-            // ... definisi field
-        }, {
-            sequelize,
-            modelName: 'Order',
-        });
-
-        Order.associate = function(models) {
-            Order.belongsTo(models.Menu, {
-                foreignKey: 'menuId',
-                as: 'menu'
-            });
-        };
 
     return Order;
 };

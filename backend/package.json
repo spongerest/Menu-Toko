@@ -16,12 +16,13 @@
     "sequelize-cli": "^6.6.2"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "nodemon": "^3.0.3"
   },
   "scripts": {
     "start": "node src/app.js",
-    "start:dev": "NODE_ENV=development node -r dotenv/config src/app.js dotenv_config_path=development.env",
-    "start:prod": "NODE_ENV=production node -r dotenv/config src/app.js dotenv_config_path=production.env",
-    "start:test": "NODE_ENV=test node -r dotenv/config src/app.js dotenv_config_path=test.env"
+    "start:dev": "cross-env NODE_ENV=development node -r dotenv/config src/app.js dotenv_config_path=development.env",
+    "start:prod": "cross-env NODE_ENV=production node -r dotenv/config src/app.js dotenv_config_path=production.env",
+    "start:test": "cross-env NODE_ENV=test node -r dotenv/config src/app.js dotenv_config_path=test.env"
   }
 }
