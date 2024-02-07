@@ -17,7 +17,6 @@ exports.adminLogin = async (req, res) => {
             return res.status(403).send("Access denied");
         }
 
-        // Generate JWT token
         const token = jwt.sign(
             { id: user.id, role: user.role },
             process.env.JWT_SECRET,
@@ -30,7 +29,10 @@ exports.adminLogin = async (req, res) => {
             user: { id: user.id, username: user.username, role: user.role }
         });
     } catch (error) {
-        console.error(error);
+        // Log errors only if not in test environment
+        if (process.env.NODE_ENV !== 'test') {
+            console.error(error);
+        }
         res.status(500).send("Error during login");
     }
 };
