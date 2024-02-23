@@ -1,12 +1,10 @@
-// src/redux/reducers/rootReducer.js
 import { combineReducers } from '@reduxjs/toolkit';
-// Impor reducer lainnya
-import userReducer from './userReducer';
+import adminReducer from '../adminSlice';
+import cartReducer from '../cartSlice';
 
 const rootReducer = combineReducers({
-  // Definisikan reducer Anda di sini
-    user: userReducer,
-  // reducer lainnya...
+  admin: adminReducer,
+  cart: cartReducer,
 });
 
 export default rootReducer;

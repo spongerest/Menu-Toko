@@ -1,9 +1,21 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AdminLogin from './components/admin/AdminLogin';
+import HomePage from './pages/HomePage';
+import UserPage from './pages/UserPage';
+import AdminPage from './pages/AdminPage';
+import CartPage from './pages/CartPage'
 
-// ...
+const AppRoutes = () => (
+    <Router>
+    <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/user" element={<UserPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+    </Routes>
+    </Router>
+);
 
-<Router>
-    {/* ... other routes */}
-    <Route path="/admin/login" component={AdminLogin} />
-</Router>
+export default AppRoutes;
